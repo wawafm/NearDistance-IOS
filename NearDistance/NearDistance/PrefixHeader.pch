@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  NearDistance
+//
+//  Created by wawa on 15/10/8.
+//  Copyright © 2015年 李世超. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+
+#import "constant.h"
+
+#endif /* PrefixHeader_pch */

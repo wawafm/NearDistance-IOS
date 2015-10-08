@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "NDHomeViewController.h"
+#import "NDHuDongViewController.h"
+#import "NDShangQuanViewController.h"
+#import "NDMyViewController.h"
+#import "NDTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +21,30 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    //story加载界面
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    NDHomeViewController *home = [story instantiateViewControllerWithIdentifier:@"NDHomeViewController"];
+    UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:home];
+    
+    NDHuDongViewController *huDong = [story instantiateViewControllerWithIdentifier:@"NDHuDongViewController"];
+    UINavigationController *huDongNav = [[UINavigationController alloc] initWithRootViewController:huDong];
+    
+    NDShangQuanViewController *shangQuan = [story instantiateViewControllerWithIdentifier:@"NDShangQuanViewController"];
+    UINavigationController *shangQuanNav = [[UINavigationController alloc] initWithRootViewController:shangQuan];
+    
+    NDMyViewController *my = [story instantiateViewControllerWithIdentifier:@"NDMyViewController"];
+    UINavigationController *myNav = [[UINavigationController alloc] initWithRootViewController:my];
+    //设置根控制器
+    NDTabBarController *tabBarCon = [[NDTabBarController alloc] init];
+    tabBarCon.viewControllers = @[homeNav,huDongNav,shangQuanNav,myNav];
+    self.window.rootViewController = tabBarCon;
+    
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
