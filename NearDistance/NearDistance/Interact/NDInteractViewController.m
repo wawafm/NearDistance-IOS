@@ -1,21 +1,23 @@
 //
-//  NDHuDongViewController.m
+//  NDInteractViewController.m
 //  NearDistance
 //
 //  Created by wawa on 15/10/8.
 //  Copyright © 2015年 李世超. All rights reserved.
 //
 
-#import "NDHuDongViewController.h"
+#import "NDInteractViewController.h"
 
-@interface NDHuDongViewController ()
+@interface NDInteractViewController ()
 
 @end
 
-@implementation NDHuDongViewController
+@implementation NDInteractViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //[super setNavigationTitle:@"互动"];
+    [super setNavigationLeft:@"邻居圈"];
     // Do any additional setup after loading the view.
 }
 

@@ -50,13 +50,13 @@
         
         [btn setImage:[UIImage imageNamed:strY] forState:UIControlStateSelected];
         [btn setImage:[UIImage imageNamed:strN] forState:UIControlStateNormal];
-        
+        btn.titleLabel.font = [UIFont systemFontOfSize:14.0f];
         [btn setTitle:arr[index] forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor colorWithRed:142/255.0 green:197/255.0 blue:44/255.0 alpha:1.0] forState:UIControlStateSelected];
-        [btn setTitleColor:[UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0] forState:UIControlStateNormal];
+        [btn setTitleColor:kUIColorFromRGB(MAIN_COLOR) forState:UIControlStateSelected];
+        [btn setTitleColor:kUIColorFromRGB(GRAY_COLOR) forState:UIControlStateNormal];
         
-        [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 30, 20, 0)];
-        [btn setTitleEdgeInsets:UIEdgeInsetsMake(30, 0, 0, 30)];
+        [btn setImageEdgeInsets:UIEdgeInsetsMake(5, 30, 20, 0)];
+        [btn setTitleEdgeInsets:UIEdgeInsetsMake(30, 0, 0, 24)];
         
         //监听点击
         [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -74,7 +74,7 @@
 
 
 - (void)clickBtn:(NDButton *)btn{
-    NSLog(@"点击了tabbar");
+    DDLogWarn(@"点击了tabbar");
     self.selectBtn.selected = NO;
     self.selectBtn = btn;
     self.selectBtn.selected = YES;
@@ -86,15 +86,10 @@
 }
 
 - (void)layoutSubviews{
-    //135  72
-    CGFloat btnW = [UIScreen mainScreen].bounds.size.width / 4;
-//    CGFloat btnW = 135;
-    CGFloat btnH = 49;
-//    CGFloat jianGe = ([UIScreen mainScreen].bounds.size.width - btnW * 4)/ 5;
+
     for (NSInteger i = 0 ; i < 4; i++) {
         NDButton *btn = self.subviews[i];
-        btn.frame = CGRectMake(i * btnW, 0, btnW, btnH);
-        
+        btn.frame = CGRectMake(i * TABBAR_BUTTON_WIDTH, 0, TABBAR_BUTTON_WIDTH, TABBAR_HEIGHT);
     }
 }
 

@@ -1,14 +1,13 @@
 //
-//  NDTabBarController.h
+//  NDDistrictViewController.h
 //  NearDistance
 //
 //  Created by wawa on 15/10/8.
 //  Copyright © 2015年 李世超. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "NDBaseViewController.h"
 
-@interface NDTabBarController : UITabBarController
-
+@interface NDDistrictViewController : NDBaseViewController
 
 @end

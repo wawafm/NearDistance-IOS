@@ -6,8 +6,8 @@
 //  Copyright © 2015年 李世超. All rights reserved.
 //
 
-#import "NDNavBascViewController.h"
+#import "NDBaseViewController.h"
 
-@interface NDHomeViewController : NDNavBascViewController
+@interface NDHomeViewController : NDBaseViewController
 
 @end

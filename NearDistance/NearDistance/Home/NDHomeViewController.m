@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [super setNavigationLeft:@"邻居"];
 }
 
 - (void)didReceiveMemoryWarning {

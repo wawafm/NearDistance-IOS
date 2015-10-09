@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [super setNavigationLeft:@"个人中心"];
     // Do any additional setup after loading the view.
 }
 

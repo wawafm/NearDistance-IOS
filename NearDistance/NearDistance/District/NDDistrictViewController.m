@@ -1,21 +1,22 @@
 //
-//  NDShangQuanViewController.m
+//  NDDistrictViewController.m
 //  NearDistance
 //
 //  Created by wawa on 15/10/8.
 //  Copyright © 2015年 李世超. All rights reserved.
 //
 
-#import "NDShangQuanViewController.h"
+#import "NDDistrictViewController.h"
 
-@interface NDShangQuanViewController ()
+@interface NDDistrictViewController ()
 
 @end
 
-@implementation NDShangQuanViewController
+@implementation NDDistrictViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [super setNavigationLeft:@"商圈"];
     // Do any additional setup after loading the view.
 }
 
