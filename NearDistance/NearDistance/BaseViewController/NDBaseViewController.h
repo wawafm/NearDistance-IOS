@@ -15,12 +15,8 @@
 
 //导航条
 @property (nonatomic, strong) UIView *navView;
-//返回按钮
+//标题logo按钮
 @property (nonatomic, strong) UIButton *logoButton;
-//主题
-@property (nonatomic, strong) UILabel *titleLabel;
-//右边按钮
-@property (nonatomic, strong) UIButton *rightButton;
 
 - (void)setNavigationTitle:(NSString *)title;
 - (void)setNavigationLeft:(NSString *)title;

@@ -17,5 +17,7 @@
 #import "UIViewExt.h"
 #import "WXHLGlobalUICommon.h"
 #import "AFNetworking.h"
+#import "MJRefresh.h"
+#import "MJRefreshUtils.h"
 
 #endif /* PrefixHeader_pch */

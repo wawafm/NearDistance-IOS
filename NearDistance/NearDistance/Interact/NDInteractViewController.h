@@ -10,4 +10,6 @@
 
 @interface NDInteractViewController : NDBaseViewController
 
+//右边按钮
+@property (nonatomic, strong) UIButton *rightButton;
 @end

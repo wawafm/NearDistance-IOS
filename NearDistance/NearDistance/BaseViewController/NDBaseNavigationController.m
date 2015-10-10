@@ -63,7 +63,7 @@
     }
 }
 
-//自定义NavigationBar的背景
+#pragma mark - 自定义NavigationBar的背景
 - (void)loadNavigationBarImage
 {
     float version = WXHLOSVersion();
@@ -79,7 +79,7 @@
     }
 }
 
-// override the push method
+#pragma mark - override the push method
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     [self.screenShotsList addObject:[self capture]];
@@ -87,7 +87,7 @@
     [super pushViewController:viewController animated:animated];
 }
 
-// override the pop method
+#pragma mark - override the pop method
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated
 {
     [self.screenShotsList removeLastObject];

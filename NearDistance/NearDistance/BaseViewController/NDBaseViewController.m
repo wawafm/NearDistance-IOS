@@ -27,8 +27,8 @@
     [super viewDidLoad];
     [self navigationBackView];
     //设置背景（测试用）
-//    self.navigationController.navigationBarHidden = YES;
-    self.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1.0];
+    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+    self.view.backgroundColor = [UIColor whiteColor];
     //顶格
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
@@ -40,6 +40,7 @@
     if (viewController.count > 1 && self.isBackButton) {
 
       UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+      button.frame = CGRectMake(0, 0, 45, 25);
       button.imageEdgeInsets = UIEdgeInsetsMake(0, -25, 0, 0);
       [button setImage:[UIImage imageNamed:NAVIGATIONBAR_BACK_IMG]
               forState:UIControlStateNormal];
@@ -53,7 +54,6 @@
       [button setTitle:@"返回" forState:UIControlStateNormal];
       button.titleLabel.font = [UIFont systemFontOfSize:14.0f]; //
       button.showsTouchWhenHighlighted = YES;
-      button.frame = CGRectMake(0, 0, 45, 25);
       [button addTarget:self
                     action:@selector(backAction)
           forControlEvents:UIControlEventTouchUpInside];
@@ -93,6 +93,7 @@
     self.logoButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.logoButton.frame = CGRectMake(20, 20, 120, 44);
     [self.logoButton setImage:[UIImage imageNamed:NAVIGATIONBAR_LOGO_IMG] forState:UIControlStateNormal];
+    self.logoButton.userInteractionEnabled = NO;
     self.logoButton.titleEdgeInsets = UIEdgeInsetsMake(2, 10, 0, 0);
     [self.logoButton setTitleColor:kUIColorFromRGB(MAIN_COLOR) forState:UIControlStateNormal];
     [self.logoButton setTitle:title forState:UIControlStateNormal];

@@ -20,8 +20,8 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     //设置根控制器
-    NDTabBarController *tabBarCon = [[NDTabBarController alloc] init];
-    self.window.rootViewController = tabBarCon;
+    NDTabBarController *tabBarCtrl = [[NDTabBarController alloc] init];
+    self.window.rootViewController = tabBarCtrl;
     
     //实例化日志 lumberjack
     [DDLog addLogger:[DDTTYLogger sharedInstance]];

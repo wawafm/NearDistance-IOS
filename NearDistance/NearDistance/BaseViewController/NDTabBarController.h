@@ -12,4 +12,5 @@
 {
     NSMutableArray *viewControllers;
 }
+@property (nonatomic,strong) UILabel *lineLabel;
 @end

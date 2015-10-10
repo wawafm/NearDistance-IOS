@@ -14,7 +14,6 @@
 //选中的图片
 @property (nonatomic,strong) NDButton *selectBtn;
 
-
 @end
 
 @implementation NDButtonView
@@ -44,19 +43,18 @@
     for (NSInteger index = 0; index < 4; index++) {
         
         NDButton *btn = [NDButton buttonWithType:UIButtonTypeCustom];
-        
         NSString *strN = [NSString stringWithFormat:@"tubiao%zd-nojiaodian",index +1];
         NSString *strY = [NSString stringWithFormat:@"tubiao%zd-jiaodian",index +1];
-        
+        btn.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [btn setImage:[UIImage imageNamed:strY] forState:UIControlStateSelected];
         [btn setImage:[UIImage imageNamed:strN] forState:UIControlStateNormal];
-        btn.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+        btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
         [btn setTitle:arr[index] forState:UIControlStateNormal];
         [btn setTitleColor:kUIColorFromRGB(MAIN_COLOR) forState:UIControlStateSelected];
         [btn setTitleColor:kUIColorFromRGB(GRAY_COLOR) forState:UIControlStateNormal];
         
         [btn setImageEdgeInsets:UIEdgeInsetsMake(5, 30, 20, 0)];
-        [btn setTitleEdgeInsets:UIEdgeInsetsMake(30, 0, 0, 24)];
+        [btn setTitleEdgeInsets:UIEdgeInsetsMake(30, 0, 0, 20)];
         
         //监听点击
         [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];

@@ -9,5 +9,9 @@
 #import "NDBaseViewController.h"
 
 @interface NDDistrictViewController : NDBaseViewController
-
+{
+    NSURLConnection *theConnection;
+    MJRefreshHeaderView *_header;
+}
+@property (weak, nonatomic) IBOutlet UIWebView *districtWebView;
 @end

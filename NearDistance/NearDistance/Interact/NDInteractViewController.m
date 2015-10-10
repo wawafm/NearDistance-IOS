@@ -7,6 +7,7 @@
 //
 
 #import "NDInteractViewController.h"
+#import "PublishTopicViewController.h"
 
 @interface NDInteractViewController ()
 
@@ -16,24 +17,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[super setNavigationTitle:@"互动"];
     [super setNavigationLeft:@"邻居圈"];
-    // Do any additional setup after loading the view.
+    [self _initNavBarRight];
+}
+
+#pragma mark - 初始化右侧视图
+- (void)_initNavBarRight
+{
+    self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.rightButton.frame = CGRectMake(0, 0, 100, 64);
+    [self.rightButton setImage:[UIImage imageNamed:NAVIGATIONBAR_PUBLISH_IMG] forState:UIControlStateNormal];
+    self.rightButton.titleLabel.font = [UIFont systemFontOfSize:13.0f];
+    self.rightButton.titleEdgeInsets = UIEdgeInsetsMake(2, 10, 0, 0);
+    [self.rightButton setTitleColor:kUIColorFromRGB(MAIN_COLOR) forState:UIControlStateNormal];
+    [self.rightButton addTarget:self action:@selector(publishTopic:) forControlEvents:UIControlEventTouchUpInside];
+    [self.rightButton setTitle:@"发布新话题" forState:UIControlStateNormal];
+    self.rightButton.contentHorizontalAlignment = 1;
+    UIBarButtonItem *logonItem = [[UIBarButtonItem alloc] initWithCustomView:_rightButton];
+    self.navigationItem.rightBarButtonItem = logonItem;
+}
+
+#pragma mark - 发布话题action
+- (void)publishTopic:(UIButton *)sender
+{
+    PublishTopicViewController *publishTop = [[PublishTopicViewController alloc] init];
+    [self.navigationController pushViewController:publishTop animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
