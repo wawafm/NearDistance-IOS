@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "NDTabBarController.h"
+#import "NDLoginViewController.h"
+#import "NDBaseNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -19,15 +21,28 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    //设置根控制器
-    NDTabBarController *tabBarCtrl = [[NDTabBarController alloc] init];
-    self.window.rootViewController = tabBarCtrl;
     
+    //设置根控制器
+    
+    NSData *memberData = [USERDEFAULT objectForKey:@"member_session"];
+    _memberInfoModel = [NSKeyedUnarchiver unarchiveObjectWithData:memberData];
+    if (_memberInfoModel==nil) {
+        NDLoginViewController *loginCtrl = [[NDLoginViewController alloc] init];
+        NDBaseNavigationController *baseNav = [[NDBaseNavigationController alloc] initWithRootViewController:loginCtrl];
+        self.window.rootViewController = baseNav;
+    }else{
+        NDTabBarController *tabBarCtrl = [[NDTabBarController alloc] init];
+        self.window.rootViewController = tabBarCtrl;
+    }
     //实例化日志 lumberjack
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     //允许颜色
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
     [self.window makeKeyAndVisible];
+    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:PGY_APPKEY];
+    [[PgyManager sharedPgyManager] startManagerWithAppId:PGY_APPKEY];
+    
+    [NSThread sleepForTimeInterval:1.0];//设置启动页面时间
     return YES;
 }
 

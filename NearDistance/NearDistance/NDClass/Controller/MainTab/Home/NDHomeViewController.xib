@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NDHomeViewController">
+            <connections>
+                <outlet property="homeTableView" destination="bKk-Zr-LvO" id="lho-wa-KiE"/>
+                <outlet property="view" destination="iN0-l3-epB" id="17X-Zl-WKo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bKk-Zr-LvO" customClass="HomeTableView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="520"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bKk-Zr-LvO" secondAttribute="bottom" constant="48" id="Ahq-E1-ndw"/>
+                <constraint firstItem="bKk-Zr-LvO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Eqh-IO-d41"/>
+                <constraint firstItem="bKk-Zr-LvO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="m1x-cq-SPN"/>
+                <constraint firstAttribute="trailing" secondItem="bKk-Zr-LvO" secondAttribute="trailing" id="tcH-aK-SRy"/>
+            </constraints>
+            <point key="canvasLocation" x="390" y="336"/>
+        </view>
+    </objects>
+</document>

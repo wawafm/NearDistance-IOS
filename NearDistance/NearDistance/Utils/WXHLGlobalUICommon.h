@@ -17,15 +17,6 @@
 #define WXHL_IPAD_KEYBOARD_HEIGHT            WXHLkDefaultPadPortraitKeyboardHeight
 #define WXHL_IPAD_LANDSCAPE_KEYBOARD_HEIGHT  WXHLkDefaultPadLandscapeKeyboardHeight
 
-#define  OFFSET 20  //新闻图集的偏移位置
-
-#define STATEBAR_HEIGHT             20  //状态栏的高度
-#define TABBAR_HEIGHTG              50  //自定义UITabBar的高度
-#define TABBAR_HEIGHT               49  //自定义UITabBar的高度
-
-#define TABBAR_BUTTON_WIDTH         ScreenWidth/4  //
-#define TABBAR_BUTTON_HEIGHT        49              //
-
 //安全释放对象
 #define RELEASE_SAFELY(__POINTER) { if(__POINTER){[__POINTER release]; __POINTER = nil; }}
 
